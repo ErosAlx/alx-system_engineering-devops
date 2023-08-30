@@ -1,3 +1,2 @@
 #!/bin/bash
-(ls -ap1 | sort -d -k1.1,1.1 -k1.2n | tr '\n' ',' | sed 's/,$/\n/' | sed 's/,/, /g' | tr -d ' ') | cat
-
+ls -p1 | grep -v '^.$' | LC_COLLATE=C sort -d | tr '\n' ',' | sed 's/,$/\n/' 
